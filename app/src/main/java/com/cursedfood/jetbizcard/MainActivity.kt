@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
@@ -31,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.cursedfood.jetbizcard.ui.theme.JetBizCardTheme
 
@@ -72,28 +74,40 @@ fun CreateBizCard() {
 private fun DisplayInfo() {
     Column(
         modifier = Modifier
-            .height(300.dp)
+            .height(400.dp)
             .fillMaxWidth(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         DisplayProfileImage()
         Divider(modifier = Modifier.padding(10.dp))
-        Column(modifier = Modifier.padding(5.dp)) {
-            Text(
-                text = "Raccy Raccoon",
-                style = MaterialTheme.typography.displayMedium,
-                color = MaterialTheme.colorScheme.secondary
-            )
-            Text(
-                text = "Android Programmer",
-                modifier = Modifier.padding(3.dp)
-            )
-            Text(
-                text = "@raccytheraccoon",
-                modifier = Modifier.padding(3.dp)
-            )
+        CreateInfo()
+        Button(
+            onClick = {},
+            shape = MaterialTheme.shapes.medium,
+        ) {
+            Text(text = "Portfolio", style = MaterialTheme.typography.bodyMedium)
+
         }
+    }
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(modifier = Modifier.padding(5.dp)) {
+        Text(
+            text = "Raccy Raccoon",
+            style = MaterialTheme.typography.displayMedium,
+            color = MaterialTheme.colorScheme.secondary
+        )
+        Text(
+            text = "Android Programmer",
+            modifier = Modifier.padding(3.dp)
+        )
+        Text(
+            text = "@raccytheraccoon",
+            modifier = Modifier.padding(3.dp)
+        )
     }
 }
 
