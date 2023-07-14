@@ -32,9 +32,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.cursedfood.jetbizcard.ui.theme.JetBizCardTheme
+
+val robotoFamily = FontFamily(
+    Font(R.font.roboto_regular, FontWeight.Normal),
+    Font(R.font.roboto_italic, FontWeight.Normal, FontStyle.Italic),
+    Font(R.font.roboto_thin_italic, FontWeight.Thin, FontStyle.Italic),
+    Font(R.font.roboto_thin, FontWeight.Thin),
+    Font(R.font.roboto_bold, FontWeight.Bold)
+)
+
+val pangolinFamily = FontFamily(
+    Font(R.font.pangolin_regular)
+)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -106,6 +122,8 @@ private fun CreateInfo() {
         )
         Text(
             text = "@raccytheraccoon",
+            fontFamily = pangolinFamily,
+            color = Color.Green,
             modifier = Modifier.padding(3.dp)
         )
     }
